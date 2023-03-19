@@ -1,0 +1,40 @@
+body{
+    background-color: blue;
+    margin: 0px;
+}
+.container {
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    color: #e1dede;
+}
+
+.container h1 {
+    font-family: sans-serif;
+    color: #bdbcb9;
+    margin-top: 50px;
+}
+
+.container form {
+    margin-top: 20px;
+}
+
+.container form #height {
+    width: 200px;
+    margin: 5px;
+    padding: 15px;
+}
+
+.container form #email {
+    width: 200px;
+    margin: 5px;
+    padding: 15px;
+}
+
+.container form button {
+    background-color: #05cd71;
+    border: none;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
