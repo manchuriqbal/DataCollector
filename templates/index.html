@@ -13,7 +13,7 @@
 
         <h1>Collecting Height</h1>
         <h3>Please fill the entires to get population statistics on Height</h3>
-        <form action="result.html" method="POST">
+        <form action="{{url_for('result')}}" method="POST">
             <input type="email" name="email_name" title="your email will be safe with us " placeholder="Enter your Email" id="email" required> <br>
             <input type="number" name="height_name" title="your data will be safe with us " placeholder="Enter your Height" id="height" min="50" max="300"> <br>
             <button type="submit">Submit</button>
