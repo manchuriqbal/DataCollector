@@ -1,6 +1,7 @@
 body{
     background-color: blue;
     margin: 0px;
+    height: 100vh;
 }
 .container {
     margin: auto;
@@ -37,4 +38,8 @@ body{
     padding: 5px;
     color: white;
     cursor: pointer;
+}
+.massage{
+    font-size: 15px;
+    color: rgb(207, 63, 63);
 }

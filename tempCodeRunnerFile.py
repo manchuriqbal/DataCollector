@@ -1,1 +1,3 @@
-__main__
+    db.create_all()
+        app.debug = True
+        app.run()
