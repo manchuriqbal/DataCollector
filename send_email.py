@@ -1,22 +1,26 @@
-from email.mime.text import MIMEText
+import ssl
 import smtplib
+from email.mime.text import MIMEText
+from email.message import EmailMessage
 
 
-def send_email(email, height):
-    from_email = "manchur.iqbal1@gmail.com"
-    from_Pass = "bfaofmjrvltcpseu"
+def send_email(email, height, height_avg, count):
+    from_email = "manchur.fiverr@gmail.com"
+    from_Pass = "xsnukxppwwjrfugz"
     to_email = email
 
     subject = "Height data"
-    message = "hey there your Height is <strong> %s <strong>." % height
+    message = "hey there your Height is %s. avarage height of all is %s and that is calculate out of %s pepole." % (
+        height, height_avg, count)
 
-    msg = MIMEText(message, "html")
+    msg = EmailMessage()
     msg["Subject"] = subject
     msg["To"] = to_email
     msg["From"] = from_email
+    msg.set_content(message)
 
-    gmail = smtplib.SMTP("smtp.gmail.com", 587)
-    gmail.ehlo()
-    gmail.starttls()
-    gmail.login(from_email, from_Pass)
-    gmail.send_message(msg)
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(from_email, from_Pass)
+        smtp.sendmail(from_email, to_email, msg.as_string())
